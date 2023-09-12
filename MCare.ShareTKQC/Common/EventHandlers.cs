@@ -1,5 +1,8 @@
 ﻿using System.Windows.Forms;
 using System;
+using System.Runtime.InteropServices;
+using MCare.ShareTKQC.Dtos;
+using MCare.ShareTKQC.Helpers;
 
 namespace MCare.ShareTKQC.Common
 {
@@ -67,9 +70,52 @@ namespace MCare.ShareTKQC.Common
             Common.ImportAccountCommon(dtgvViaReceive, clipboard);
         }
 
-        public void LoadAdsAccount_Click(object sender, EventArgs e)
+        public async void LoadAdsAccount_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Abc");
+            int i = 0;
+            while (i < dtgvViaReceive.RowCount)
+            {
+                DataGridViewRow row = dtgvViaShare.Rows[i];
+                if (Convert.ToBoolean(row.Cells[0].Value))
+                {
+                    Common.SetStatusAccount(dtgvViaShare, row.Index, "cStatusShare", "Bắt đầu");
+
+                    if (string.IsNullOrEmpty(row.Cells["cCookieShare"].Value.ToString()))
+                    {
+                        FacebookDto fbDto = new FacebookDto
+                        {
+                            Uid = row.Cells[2].Value.ToString(),
+                            Password = row.Cells[3].Value.ToString(),
+                            Key2Fa = row.Cells[4].Value.ToString(),
+                        };
+
+                        RequestHelpers helper = new RequestHelpers(fbDto);
+                        var cookie = await helper.LoginFacebook();
+
+                        if (cookie.Contains("c_user"))
+                        {
+                            Common.SetStatusAccount(dtgvViaShare, row.Index, "cStatusShare", "Account Live");
+                            fbDto.Cookie = cookie;
+                            row.Cells["cCookieShare"].Value = cookie;
+                            var token = await helper.GetTokenEAAb();
+                            if (!string.IsNullOrEmpty(token))
+                            {
+                                Common.SetStatusAccount(dtgvViaShare, row.Index, "cStatusShare", "Get Token Ok");
+                                fbDto.Token = token;
+                                row.Cells["cTokenShare"].Value = token;
+                            }
+                            else
+                            {
+                                Common.SetStatusAccount(dtgvViaShare, row.Index, "cStatusShare", "Get token thất bại");
+                            }
+                        }
+                        else
+                        {
+                            Common.SetStatusAccount(dtgvViaShare, row.Index, "cStatusShare", "Account Die");
+                        }
+                    }
+                }
+            }
         }
     }
 }

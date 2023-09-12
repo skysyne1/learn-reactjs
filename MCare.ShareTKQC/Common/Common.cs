@@ -1,4 +1,5 @@
 ﻿using MCare.ShareTKQC.Helpers;
+using OtpNet;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -102,6 +103,18 @@ namespace MCare.ShareTKQC.Common
                 row.Cells[4].Value = accountSplit[2];
             }
             MessageBox.Show(string.Format("Import thành công {0}/{1}", add, accounts.Count()), "Thông báo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public static void SetStatusAccount(DataGridView dgv, int indexRow, string column, string value)
+        {
+            DatagridviewHelper.SetStatusDataGridView(dgv, indexRow, column, value);
+        }
+
+        public static string GetCode(string key2fa)
+        {
+            byte[] secretKey = Base32Encoding.ToBytes(key2fa.Trim().Replace(" ", ""));
+            Totp totp = new Totp(secretKey);
+            return totp.ComputeTotp(DateTime.UtcNow);
         }
     }
 }

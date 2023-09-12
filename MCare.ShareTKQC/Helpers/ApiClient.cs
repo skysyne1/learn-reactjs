@@ -21,8 +21,7 @@ namespace MCare.ShareTKQC.Helpers
 
         public ApiClient(string cookie, string proxy, int typeProxy, string user_agent = RequestFields.UserAgent)
         {
-            if (!string.IsNullOrEmpty(cookie) && !string.IsNullOrEmpty(proxy))
-                InitData(cookie, proxy, typeProxy, user_agent);
+            InitData(cookie, proxy, typeProxy, user_agent);
         }
 
         public async Task<string> GetStringAsync(string url)
