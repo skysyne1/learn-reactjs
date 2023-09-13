@@ -11,3 +11,7 @@ D:\C#\MCare.ShareTKQC\MCare.ShareTKQC\obj\Debug\MCare.ShareTKQC.csproj.CoreCompi
 D:\C#\MCare.ShareTKQC\MCare.ShareTKQC\obj\Debug\MCare.ShareTKQC.csproj.CopyComplete
 D:\C#\MCare.ShareTKQC\MCare.ShareTKQC\obj\Debug\MCare.ShareTKQC.exe
 D:\C#\MCare.ShareTKQC\MCare.ShareTKQC\obj\Debug\MCare.ShareTKQC.pdb
+D:\C#\MCare.ShareTKQC\MCare.ShareTKQC\bin\Debug\HtmlAgilityPack.dll
+D:\C#\MCare.ShareTKQC\MCare.ShareTKQC\bin\Debug\HtmlAgilityPack.pdb
+D:\C#\MCare.ShareTKQC\MCare.ShareTKQC\bin\Debug\Newtonsoft.Json.dll
+D:\C#\MCare.ShareTKQC\MCare.ShareTKQC\bin\Debug\Otp.NET.dll

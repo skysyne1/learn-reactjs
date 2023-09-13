@@ -1,5 +1,6 @@
 ﻿using HtmlAgilityPack;
 using MCare.ShareTKQC.Dtos;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -108,6 +109,13 @@ namespace MCare.ShareTKQC.Helpers
             string fb_dtsg = Regex.Match(getdata, "(?<=fb_dtsg).*?(?=autocomplete)").ToString().Replace("value=", "").Replace(" ", "").Replace("\"", "").Replace(@"\", "");
             string jazoest = Regex.Match(getdata, "(?<=jazoest).*?(?=autocomplete=)").ToString().Replace(@"\", "").Replace("\"", "").Replace(" ", "").Replace("value=", "");
             return $"{fb_dtsg}|{jazoest}";
+        }
+
+        public async Task<JArray> LoadAdAccounts(string token)
+        {
+            var adAccountObj = await _apiClient.GetStringAsync($"https://graph.facebook.com/v14.0/me/adaccounts?fields=business_country_code,business,created_time,funding_source_details,account_status,adspaymentcycle,id,currency,amount_spent,balance,name,timezone_name,adtrust_dsl,disable_reason,min_billing_threshold&summary=total_count&access_token={token}");
+            JObject job = JObject.Parse(adAccountObj);
+            return (JArray)job["data"];
         }
     }
 }

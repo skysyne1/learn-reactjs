@@ -33,6 +33,14 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgvViaReceive = new System.Windows.Forms.DataGridView();
+            this.cChoseReceive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cSttReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUidReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPasswordReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cKey2FaReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCookieReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTokenReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cStatusReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.chọnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bôiĐenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,21 +60,15 @@
             this.cStatusShare = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btn_Start = new System.Windows.Forms.Button();
             this.dtgvAdAccounts = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cChose = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cStt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cCurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTimezone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cAccountStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.cChoseReceive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cSttReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUidReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPasswordReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cKey2FaReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cCookieReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cTokenReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cStatusReceive = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -135,6 +137,48 @@
             this.dtgvViaReceive.Size = new System.Drawing.Size(1158, 157);
             this.dtgvViaReceive.TabIndex = 6;
             // 
+            // cChoseReceive
+            // 
+            this.cChoseReceive.FillWeight = 30F;
+            this.cChoseReceive.HeaderText = "Chose";
+            this.cChoseReceive.Name = "cChoseReceive";
+            // 
+            // cSttReceive
+            // 
+            this.cSttReceive.FillWeight = 30F;
+            this.cSttReceive.HeaderText = "#";
+            this.cSttReceive.Name = "cSttReceive";
+            // 
+            // cUidReceive
+            // 
+            this.cUidReceive.HeaderText = "Uid";
+            this.cUidReceive.Name = "cUidReceive";
+            // 
+            // cPasswordReceive
+            // 
+            this.cPasswordReceive.HeaderText = "Password";
+            this.cPasswordReceive.Name = "cPasswordReceive";
+            // 
+            // cKey2FaReceive
+            // 
+            this.cKey2FaReceive.HeaderText = "Key 2Fa";
+            this.cKey2FaReceive.Name = "cKey2FaReceive";
+            // 
+            // cCookieReceive
+            // 
+            this.cCookieReceive.HeaderText = "Cookie";
+            this.cCookieReceive.Name = "cCookieReceive";
+            // 
+            // cTokenReceive
+            // 
+            this.cTokenReceive.HeaderText = "Token EAAb";
+            this.cTokenReceive.Name = "cTokenReceive";
+            // 
+            // cStatusReceive
+            // 
+            this.cStatusReceive.HeaderText = "Status";
+            this.cStatusReceive.Name = "cStatusReceive";
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -156,13 +200,13 @@
             // bôiĐenToolStripMenuItem
             // 
             this.bôiĐenToolStripMenuItem.Name = "bôiĐenToolStripMenuItem";
-            this.bôiĐenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bôiĐenToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.bôiĐenToolStripMenuItem.Text = "Bôi đen";
             // 
             // tấtCảToolStripMenuItem
             // 
             this.tấtCảToolStripMenuItem.Name = "tấtCảToolStripMenuItem";
-            this.tấtCảToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tấtCảToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.tấtCảToolStripMenuItem.Text = "Tất cả";
             // 
             // bỏChọnToolStripMenuItem
@@ -282,6 +326,8 @@
             this.cStt,
             this.cUid,
             this.cName,
+            this.cCurrency,
+            this.cTimezone,
             this.cAccountStatus,
             this.cStatus});
             this.dtgvAdAccounts.ContextMenuStrip = this.contextMenuStrip1;
@@ -292,6 +338,16 @@
             this.dtgvAdAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvAdAccounts.Size = new System.Drawing.Size(1164, 112);
             this.dtgvAdAccounts.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1170, 539);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Cấu hình";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // cChose
             // 
@@ -315,6 +371,16 @@
             this.cName.HeaderText = "Name";
             this.cName.Name = "cName";
             // 
+            // cCurrency
+            // 
+            this.cCurrency.HeaderText = "Currency";
+            this.cCurrency.Name = "cCurrency";
+            // 
+            // cTimezone
+            // 
+            this.cTimezone.HeaderText = "Timezone";
+            this.cTimezone.Name = "cTimezone";
+            // 
             // cAccountStatus
             // 
             this.cAccountStatus.HeaderText = "Account Status";
@@ -324,58 +390,6 @@
             // 
             this.cStatus.HeaderText = "Status";
             this.cStatus.Name = "cStatus";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1170, 539);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Cấu hình";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // cChoseReceive
-            // 
-            this.cChoseReceive.FillWeight = 30F;
-            this.cChoseReceive.HeaderText = "Chose";
-            this.cChoseReceive.Name = "cChoseReceive";
-            // 
-            // cSttReceive
-            // 
-            this.cSttReceive.FillWeight = 30F;
-            this.cSttReceive.HeaderText = "#";
-            this.cSttReceive.Name = "cSttReceive";
-            // 
-            // cUidReceive
-            // 
-            this.cUidReceive.HeaderText = "Uid";
-            this.cUidReceive.Name = "cUidReceive";
-            // 
-            // cPasswordReceive
-            // 
-            this.cPasswordReceive.HeaderText = "Password";
-            this.cPasswordReceive.Name = "cPasswordReceive";
-            // 
-            // cKey2FaReceive
-            // 
-            this.cKey2FaReceive.HeaderText = "Key 2Fa";
-            this.cKey2FaReceive.Name = "cKey2FaReceive";
-            // 
-            // cCookieReceive
-            // 
-            this.cCookieReceive.HeaderText = "Cookie";
-            this.cCookieReceive.Name = "cCookieReceive";
-            // 
-            // cTokenReceive
-            // 
-            this.cTokenReceive.HeaderText = "Token EAAb";
-            this.cTokenReceive.Name = "cTokenReceive";
-            // 
-            // cStatusReceive
-            // 
-            this.cStatusReceive.HeaderText = "Status";
-            this.cStatusReceive.Name = "cStatusReceive";
             // 
             // Form1
             // 
@@ -422,12 +436,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cCookie;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTokenShare;
         private System.Windows.Forms.DataGridViewTextBoxColumn cStatusShare;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn cChose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cStt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cUid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cAccountStatus;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cStatus;
         private System.Windows.Forms.DataGridView dtgvViaReceive;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -439,6 +447,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cCookieReceive;
         private System.Windows.Forms.DataGridViewTextBoxColumn cTokenReceive;
         private System.Windows.Forms.DataGridViewTextBoxColumn cStatusReceive;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cChose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cStt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cUid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cCurrency;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTimezone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cAccountStatus;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cStatus;
     }
 }
 
